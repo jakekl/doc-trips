@@ -416,9 +416,8 @@ class Volunteer(MedicalMixin, DatabaseModel):
         'What do you like to study?', max_length=255, blank=True
     )
     personal_activities = models.TextField(
-        "In order of importance to you, please list your activities, "
-        "involvements, and communities at Dartmouth and beyond (e.g. greek "
-        "affiliation, affinity group, campus organization, team, etc)",
+        "Please list your activities, "
+        "involvements, and communities at Dartmouth and beyond ",
         blank=True,
     )
     feedback = models.TextField(
@@ -454,7 +453,7 @@ class Volunteer(MedicalMixin, DatabaseModel):
     )
     croo_willing = models.BooleanField(
         'I would like to be considered for a crooling position. (NOTE: '
-        'students who are taking classes this sophomore summer can NOT apply, '
+        'students who are taking classes this summer can NOT apply, '
         'given the conflict of dates.)',
         default=False,
     )
@@ -719,26 +718,24 @@ class LeaderSupplement(DatabaseModel):
     # ------- availibilty and experience --------
 
     section_availability = models.TextField(
-        'First-year students who plan to attend pre-orientation programs or are '
-        'transfer/exchange students will be placed on particular sections, as '
-        'indicated above. If you would like to lead a trip on a section with '
-        'these students, please indicate your preference here.',
+        'First-year students who plan to attend pre-orientation programs'
+        'FYSEP, Native and Indigenous Orientation, International Student Orientation, Transfer/Exchange Students)'
+        'will be placed on particular sections, as indicated above.'
+        'Please check if you would like to lead a trip with first years attending one of these programs.'
         blank=True,
     )
 
     availability = models.TextField(
         "Looking at the Trips descriptions, please feel free to use this "
-        "space to address any concerns or explain your availability. "
-        "If applicable, please also elaborate on any particular trips or "
-        "activities that you absolutely CANNOT participate in. All "
-        "information in this application will remain confidential.",
+        "space to address any concerns you might have about leading certain trips. "
+        "All information in this application will remain confidential.",
         blank=True,
     )
 
     relevant_experience = models.TextField(
         'WITHOUT repeating anything you have already told us, please describe '
-        'your level of expertise and any previous experience that you could '
-        'bring to each trip type that you selected (e.g. lifeguard training, '
+        'any expertise or previous experience (if you have it) that you could '
+        'bring to the trip types that you selected (e.g. lifeguard training, '
         'yoga experience, meditation experience, fishing experience, '
         'photography class, Walden enthusiast, etc).',
         blank=True,
@@ -775,7 +772,7 @@ class LeaderSupplement(DatabaseModel):
         'Please describe any climbing experience you have.', blank=True
     )
     dmbc_leader = YesNoField(
-        'Are you a leader in the Mountain Biking Club or will you become one '
+        'Are you a leader in the Dartmouth Mountain Biking Club or will you become one '
         'before fall term?'
     )
     biking_experience = models.TextField(
